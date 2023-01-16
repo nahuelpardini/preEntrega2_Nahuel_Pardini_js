@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    box-sizing: 0;
+    font-family: 'Press Start 2P', cursive;
+    font-family: 'Roboto', sans-serif;
+}
+
+#imagen, #tienda, #contacto {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#header {
+    position: sticky;
+    z-index: 9;
+    top: 0;
+}
+
+.nav-link {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+#botonCarro {
+    border: 0;
+}
+
+.main {
+    background: url(../images/main.jpeg)no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+#contacto {
+    background: url(../images/contactbg.jpg)no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    color: white;
+    text-align: center;
+}
+
+.main h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.new h1, .fuente h1 {
+    font-size: 3rem;
+    font-weight: 550;
+    text-transform: uppercase;
+}
+
+.fondo {
+    background-image: url(../images/juego.jpg);
+    background-position: center center;
+}
+
+.cuerpoRegistro {
+    background: #000000;
+    background: linear-gradient(to right, #000000, #575757);
+}
+
+/*TIENDA*/
+#contenidoTienda{
+    display: flex;
+}
+
+#tienda {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card {
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    max-height: 400px;
+    margin: auto;    
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(86, 52, 131, 0.56);
+}
+
+.card > img {
+    max-width: 70%;
+    max-height: 250px;
+    object-fit: contain;
+    justify-content: center;
+}
+
+.precio {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+/*MODAL*/
+
+.modal-container {
+    width: 70%;
+    margin: 0 10%;
+    max-height: 88vh;
+    color: #fff;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;
+    scrollbar-color: none;
+    border-radius: 15px;
+}
+
+.modal-container::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-around;
+    background-color: #0a0909;
+    color: #fff;
+    width: 100%;
+    margin: 10px;
+}
+
+.modal-header-titulo {
+    justify-self: start;
+    margin-left: 20px;
+}
+
+.modal-header-boton {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.modal-container > .modal-contenido {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+    margin: 10px;
+}
+
+.modal-container > div > img {
+    height: 120px;
+    width: 120px;
+}
+
+.total-contenido {
+    font-size: 25px;
+    padding: 20px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.eliminar-producto {
+    cursor: pointer;
+}
+
+.cantidad-compra {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    top: 37px;
+    padding: 4px;
+    position: absolute;
+    display: none;
+}
+
+.sumar, .restar {
+    cursor: pointer;
+}
