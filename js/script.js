@@ -19,13 +19,13 @@ productos.forEach((producto) => {
 
     contenidoTienda.append(contenido);
 
-    let comprar = document.createElement("button");
-    comprar.innerText = "COMPRAR";
-    comprar.className = "comprar";
+    let agregarAlCarrito = document.createElement("button");
+    agregarAlCarrito.innerText = "Agregar Al Carrito";
+    agregarAlCarrito.className = "agregarAlCarrito";
 
-    contenido.append(comprar);
+    contenido.append(agregarAlCarrito);
 
-    comprar.addEventListener("click", () =>{
+    agregarAlCarrito.addEventListener("click", () =>{
 
     const repetir = carrito.some((repetirProducto) => repetirProducto.id === producto.id);
 
