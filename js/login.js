@@ -1,13 +1,24 @@
-function login() { 
+const botonLogin = document.getElementById('boton');
+
+botonLogin.addEventListener("click", ()=>{
     const usuario = document.getElementById('usuario').value;
     const password = document.getElementById('contraseña').value;
-
     if(usuario == '' || password == '') {
-        alert('Todos los campos son requeridos');
+        Swal.fire({
+            icon: 'error',
+            title: 'Algo va mal...',
+            text: 'Tenés que completar todos los campos!',
+        })
     } else {
-        alert('Iniciaste sesión correctamente!')
-        localStorage.usuario = usuario;
-        localStorage.password = password;
-        window.location.href = 'index.html';
+        Swal.fire({
+            icon: 'success',
+            title: 'Bienvenido!',
+            text: 'A Rock Store '+usuario,
+        });
+        setTimeout(() =>{
+            localStorage.usuario = usuario;
+            localStorage.password = password;
+            window.location.href = './pages/main.html';
+        }, 900);
     };
-};
+});

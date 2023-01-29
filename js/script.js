@@ -3,51 +3,64 @@ const verCarrito = document.getElementById("verCarro");
 const modalContainer = document.getElementById("modal-container");
 const cantidadCompra = document.getElementById("cantidadCompra");
 const botonEnviar = document.getElementById('enviarConsulta');
-const iniciarSesion = document.getElementById('boton');
-
 
 let carrito = JSON.parse(localStorage.getItem("Carrito")) || [];
 
-productos.forEach((producto) => {
-    let contenido = document.createElement("div");
-    contenido.className = "card";
-    contenido.innerHTML = `
-        <img src="${producto.img}">
-        <h3>${producto.nombre}</h3>
-        <p class="precio">${producto.precio} U$D</p>
-    `;
+const pedirPosts = async () => {
+    const resp = await fetch("../local.json");
+    const data = await resp.json();
 
-    contenidoTienda.append(contenido);
+    data.forEach((producto) => {
+        let contenido = document.createElement("div");
+        contenido.className = "card";
+        contenido.innerHTML = `
+            <img src="${producto.img}">
+            <h3>${producto.nombre}</h3>
+            <p class="precio">${producto.precio} U$D</p>
+        `;
+        
+        contenidoTienda.append(contenido);
 
-    let agregarAlCarrito = document.createElement("button");
-    agregarAlCarrito.innerText = "Agregar Al Carrito";
-    agregarAlCarrito.className = "agregarAlCarrito";
+        let comprar = document.createElement("button");
+        comprar.innerText = "COMPRAR";
+        comprar.className = "comprar";
 
-    contenido.append(agregarAlCarrito);
+        contenido.append(comprar);
 
-    agregarAlCarrito.addEventListener("click", () =>{
+        comprar.addEventListener("click", () =>{
 
-    const repetir = carrito.some((repetirProducto) => repetirProducto.id === producto.id);
+            Toastify({
+                text: "Se agregó el producto al carrito de compras!",
+                className: "info",
+                style: {
+                    background: "linear-gradient(to right, #736c6c, #020024)",
+                }
+            }).showToast();
+            
+        const repetir = carrito.some((repetirProducto) => repetirProducto.id === producto.id);
 
-    if (repetir) {
-        carrito.map((produ) => {
-            if(produ.id === producto.id) {
-                produ.cantidad++;
+        if (repetir) {
+            carrito.map((produ) => {
+                if(produ.id === producto.id) {
+                    produ.cantidad++;
             }
         });
-    } else {
-        carrito.push({
-            id: producto.id,
-            img: producto.img,
-            nombre: producto.nombre,
-            precio: producto.precio,
-            cantidad: producto.cantidad,
-        });
+        } else {
+            carrito.push({
+                id: producto.id,
+                img: producto.img,
+                nombre: producto.nombre,
+                precio: producto.precio,
+                cantidad: producto.cantidad,
+            });
         contadorCarrito();
         guardarLocal();
-    }
+        }
+        });
     });
-});
+};
+
+pedirPosts();
 
 const guardarLocal = ()=>{
     localStorage.setItem("Carrito", JSON.stringify(carrito));
@@ -62,9 +75,18 @@ botonEnviar.addEventListener("click", (e) => {
     
     if (nombre == '' || apellido == '' || correo == '' || mensaje == '') {
         e.preventDefault();
-        alert ('Tiene que completar todos los campos para poder gestionar su consulta')
+        Swal.fire({
+            icon: 'error',
+            title: 'Algo va mal...',
+            text: 'Tenés que completar todos los campos para poder envíar tu consulta!',
+        });
     } else {
-        alert('Su consulta fue envíada satisfactoriamente, le responderemos en su correo: '+correo+'.');
+        e.preventDefault();
+        Swal.fire({
+            icon: 'success',
+            title: 'Muchas gracias!',
+            text: 'Su consulta fue envíada satisfactoriamente, le responderemos en su correo: '+correo,
+        });
     };
 });
 

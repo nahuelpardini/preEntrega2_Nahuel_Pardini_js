@@ -65,6 +65,26 @@ const carroCarrito = () => {
     totalCompra.className = "total-contenido";
     totalCompra.innerHTML = `Total: ${total} U$D`;
     modalContainer.append(totalCompra);
+
+    const botonComprar = document.createElement("div")
+    botonComprar.className = "botonComprar"
+    botonComprar.innerHTML = `
+    <button class="boton-comprar">FINALIZAR COMPRA</button>
+    `;
+    modalContainer.append(botonComprar);
+
+    botonComprar.addEventListener("click", ()=>{
+        Swal.fire({
+            title: 'Desea finalizar su compra?',
+            showCancelButton: true,
+            confirmButtonText: 'Si',
+            }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                Swal.fire('Su compra ha sido finalizada!')
+            }
+            });
+    });
 };
 
 verCarrito.addEventListener("click", carroCarrito);

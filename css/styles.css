@@ -51,8 +51,9 @@
 }
 
 .fondo {
-    background-image: url(../images/juego.jpg);
+    background-image: url(../images/logo-index.png);
     background-position: center center;
+    background-size: cover;    
 }
 
 .cuerpoRegistro {
@@ -190,4 +191,34 @@
 
 .sumar, .restar {
     cursor: pointer;
+}
+
+.botonComprar {
+    display: flex;
+}
+
+.boton-comprar {
+    margin: 25px;
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.boton-comprar:hover {
+    margin: 25px;
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: #000000;
+    background-color: white;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
 }
