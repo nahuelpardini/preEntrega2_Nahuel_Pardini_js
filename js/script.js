@@ -30,7 +30,7 @@ const pedirPosts = async () => {
         agregarAlCarrito.addEventListener("click", () =>{
 
             Toastify({
-                text: "Se agregó el producto al carrito de compras!",
+                text: "Se agregó el producto al carrito!",
                 className: "info",
                 style: {
                     background: "linear-gradient(to right, #736c6c, #020024)",

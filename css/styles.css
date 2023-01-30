@@ -102,7 +102,7 @@
     padding: 12px;
     color: white;
     background-color: #000000;
-    text-align: center;
+    text-align: bottom;    
     cursor: pointer;
     width: 100%;
     font-size: 18px;
@@ -115,7 +115,7 @@
 /*MODAL*/
 
 .modal-container {
-    width: 70%;
+    width: 80%;
     margin: 0 10%;
     max-height: 88vh;
     color: #fff;
