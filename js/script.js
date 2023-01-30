@@ -21,13 +21,13 @@ const pedirPosts = async () => {
         
         contenidoTienda.append(contenido);
 
-        let comprar = document.createElement("button");
-        comprar.innerText = "COMPRAR";
-        comprar.className = "comprar";
+        let agregarAlCarrito = document.createElement("button");
+        agregarAlCarrito.innerText = "Agregar al carrito";
+        agregarAlCarrito.className = "agregarAlCarrito";
 
-        contenido.append(comprar);
+        contenido.append(agregarAlCarrito);
 
-        comprar.addEventListener("click", () =>{
+        agregarAlCarrito.addEventListener("click", () =>{
 
             Toastify({
                 text: "Se agregó el producto al carrito de compras!",
