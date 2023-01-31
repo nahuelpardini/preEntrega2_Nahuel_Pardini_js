@@ -5,7 +5,7 @@
         "precio": 2000,
         "img":
             "../images/Fender.jpg",
-        "cantidad": 1
+        "cantidad": 5
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "precio": 3500,
         "img":
             "../images/Gibson.jpg",
-        "cantidad": 1
+        "cantidad": 5
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "precio": 2900,
         "img":
             "../images/charvelguthrie.jpg",
-        "cantidad": 1
+        "cantidad": 5
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "precio": 2700,
         "img":
             "../images/FenderJazzBass.jpg",
-        "cantidad": 1
+        "cantidad": 5
     },
     {
         "id": 5,
@@ -37,6 +37,6 @@
         "precio": 3200,
         "img":
             "../images/musicmanstingray.jpg",
-        "cantidad": 1
+        "cantidad": 5
     }
 ]
