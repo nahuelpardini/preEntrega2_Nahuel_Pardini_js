@@ -4,7 +4,7 @@
         "nombre": "Fender Stratocaster",
         "precio": 2000,
         "img":
-            "/images/Fender.jpg",
+            "../images/Fender.jpg",
         "cantidad": 1
     },
     {
@@ -12,7 +12,7 @@
         "nombre": "Gibson Les Paul",
         "precio": 3500,
         "img":
-            "/images/Gibson.jpg",
+            "../images/Gibson.jpg",
         "cantidad": 1
     },
     {
@@ -20,7 +20,7 @@
         "nombre": "Charvel Signature",
         "precio": 2900,
         "img":
-            "/images/charvelguthrie.jpg",
+            "../images/charvelguthrie.jpg",
         "cantidad": 1
     },
     {
@@ -28,7 +28,7 @@
         "nombre": "Fender Jazz Bass",
         "precio": 2700,
         "img":
-            "/images/fenderJazzBass.jpg",
+            "../images/fenderJazzBass.jpg",
         "cantidad": 1
     },
     {
@@ -36,7 +36,7 @@
         "nombre": "Music Man Stingray",
         "precio": 3200,
         "img":
-            "/images/musicmanstingray.jpg",
+            "../images/musicmanstingray.jpg",
         "cantidad": 1
     }
 ]
