@@ -28,7 +28,7 @@
         "nombre": "Fender Jazz Bass",
         "precio": 2700,
         "img":
-            "../images/fenderJazzBass.jpg",
+            "../images/FenderJazzBass.jpg",
         "cantidad": 1
     },
     {
